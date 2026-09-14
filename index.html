@@ -6,192 +6,364 @@
   <title>Guebo Caliente Internacional - Comunidad Oficial</title>
   <style>
     :root {
-      --bg-color: #0f0f11;
-      --card-bg: #1a1a1e;
-      --primary-red: #e50914;
-      --accent-orange: #ff5722;
+      --bg-dark: #0a0a0c;
+      --card-bg: rgba(22, 22, 28, 0.75);
+      --red-accent: #ff1e27;
+      --orange-accent: #ff5e00;
+      --glow-red: rgba(255, 30, 39, 0.4);
       --text-main: #ffffff;
-      --text-muted: #b3b3b3;
+      --text-sub: #b0b0b8;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     }
 
+    /* 1. Fondo Dinámico Animado */
     body {
-      background-color: var(--bg-color);
+      background: linear-gradient(-45deg, #050507, #120406, #1c0608, #0a0a0c);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
       color: var(--text-main);
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
       min-height: 100vh;
+      padding-bottom: 80px;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     header {
-      background-color: #000;
-      padding: 1rem 2rem;
       text-align: center;
-      border-bottom: 2px solid var(--primary-red);
+      padding: 2.5rem 1rem 1rem 1rem;
+    }
+
+    .logo-container {
+      position: relative;
+      display: inline-block;
     }
 
     .logo-img {
-      max-width: 180px;
-      height: auto;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
-      border: 3px solid var(--primary-red);
-      box-shadow: 0 0 15px rgba(229, 9, 20, 0.5);
+      border: 3px solid var(--red-accent);
+      box-shadow: 0 0 25px var(--glow-red);
+      object-fit: cover;
     }
 
     main {
-      flex: 1;
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.2rem;
+    }
+
+    .hero-text {
       text-align: center;
+      margin-bottom: 2rem;
     }
 
-    h1 {
+    .hero-text h1 {
       font-size: 2.2rem;
-      margin-top: 1rem;
-      color: var(--primary-red);
-    }
-
-    p.subtitle {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-
-    .about-box {
-      background-color: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 12px;
-      margin-bottom: 2rem;
-      text-align: left;
-      border-left: 4px solid var(--accent-orange);
-    }
-
-    .community-cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-      margin-bottom: 2.5rem;
-    }
-
-    .card {
-      background-color: var(--card-bg);
-      border: 1px solid #333;
-      border-radius: 12px;
-      padding: 1.5rem;
-      flex: 1;
-      min-width: 280px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: var(--primary-red);
-    }
-
-    .card h3 {
+      background: linear-gradient(45deg, #fff, var(--orange-accent), var(--red-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 0.5rem;
     }
 
-    .card .stats {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: var(--accent-orange);
-      margin: 0.5rem 0 1.5rem 0;
+    .hero-text p {
+      color: var(--text-sub);
+      font-size: 1rem;
     }
 
-    .btn {
-      display: inline-block;
-      background: linear-gradient(45deg, var(--primary-red), var(--accent-orange));
+    /* 2. Contadores Animados */
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      border-color: var(--red-accent);
+      box-shadow: 0 0 20px var(--glow-red);
+      transform: translateY(-4px);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--orange-accent);
+    }
+
+    /* 3. Mosaico Interactivo */
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
+      text-align: center;
       color: #fff;
-      text-decoration: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 25px;
-      font-weight: bold;
-      transition: opacity 0.2s ease;
     }
 
-    .btn:hover {
+    .grid-interactive {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .interactive-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 14px;
+      padding: 1.2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .interactive-card:hover, .interactive-card:active {
+      background: linear-gradient(135deg, rgba(255, 30, 39, 0.2), rgba(255, 94, 0, 0.1));
+      border-color: var(--orange-accent);
+      box-shadow: 0 0 15px rgba(255, 94, 0, 0.3);
+      transform: scale(1.02);
+    }
+
+    .interactive-card .icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* 4. Sección de Beneficios */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .benefit-item {
+      background: var(--card-bg);
+      border-left: 4px solid var(--red-accent);
+      padding: 1rem 1.2rem;
+      border-radius: 8px;
+    }
+
+    .benefit-item h4 {
+      color: var(--orange-accent);
+      margin-bottom: 0.3rem;
+    }
+
+    .benefit-item p {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+    }
+
+    .btn-action {
+      display: inline-block;
+      width: 100%;
+      padding: 0.9rem;
+      margin-top: 1rem;
+      background: linear-gradient(45deg, var(--red-accent), var(--orange-accent));
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 25px;
+      box-shadow: 0 4px 15px var(--glow-red);
+      transition: opacity 0.2s;
+    }
+
+    .btn-action:hover {
       opacity: 0.9;
     }
 
-    .security-info {
-      background-color: rgba(229, 9, 20, 0.1);
-      border: 1px solid var(--primary-red);
-      padding: 1rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      margin-bottom: 2rem;
+    /* 5. Notificación Flotante */
+    .floating-alert {
+      position: fixed;
+      bottom: 80px;
+      left: 15px;
+      background: rgba(18, 18, 22, 0.95);
+      border: 1px solid var(--orange-accent);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      padding: 0.8rem 1.2rem;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      z-index: 99;
+      animation: floatIn 0.5s ease-out;
     }
 
-    footer {
-      background-color: #000;
+    @keyframes floatIn {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* 6. Botón Flotante Permanente */
+    .sticky-chat-btn {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      left: 15px;
+      max-width: 400px;
+      margin: 0 auto;
+      background: linear-gradient(45deg, var(--red-accent), var(--orange-accent));
+      color: #fff;
       text-align: center;
-      padding: 1.5rem;
-      font-size: 0.85rem;
-      color: var(--text-muted);
+      padding: 0.9rem;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 20px var(--glow-red);
+      z-index: 100;
+      animation: pulseGlow 2s infinite;
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 10px var(--glow-red); }
+      50% { box-shadow: 0 0 25px rgba(255, 94, 0, 0.8); }
+      100% { box-shadow: 0 0 10px var(--glow-red); }
+    }
+
+    @media (min-width: 600px) {
+      .sticky-chat-btn {
+        left: auto;
+        right: 20px;
+        width: 220px;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <!-- Sustituye 'logo.jpg' por el nombre exacto de la imagen subida a tu repositorio -->
-    <img src="logo.png" alt="Guebo Caliente Internacional Logo" class="logo-img">
+    <div class="logo-container">
+      <!-- Cambia 'logo.jpg' por el nombre de tu archivo guardado -->
+      <img src="logo.jpg" alt="Logo Guebo Caliente Internacional" class="logo-img">
+    </div>
   </header>
 
   <main>
-    <h1>Guebo Caliente Internacional</h1>
-    <p class="subtitle">Comunidad 100% segura, accesible y diversa</p>
+    <div class="hero-text">
+      <h1>Guebo Caliente Internacional</h1>
+      <p>Comunidad 100% segura, discreta y libre de prejuicios (LGBT, LGBTQIA+ y más).</p>
+    </div>
 
-    <section class="about-box">
-      <h2>Sobre Nosotros</h2>
-      <p>
-        Un espacio abierto diseñado para todas las comunidades: LGBT, LGBTQ, LGBTI, LGBTQIA+ y LGBTTTIQ+. 
-        Nuestro objetivo es ofrecer un entorno cómodo, fácil de acceder y utilizar, donde puedas conectar 
-        y compartir tus experiencias en total libertad.
-      </p>
-    </section>
-
-    <section class="community-cards">
-      <div class="card">
-        <div>
-          <h3>🔥 GRUPO 🔥</h3>
-          <p>Comparte e interactúa directamente con los miembros.</p>
-          <div class="stats">177+ Miembros</div>
-        </div>
-        <a href="https://t.me/+ZGA2e6fvxEE4YWJk" target="_blank" class="btn">Unirse al Grupo</a>
+    <!-- Contadores de Miembros -->
+    <div class="stats-container">
+      <div class="stat-card">
+        <h3>🔥 Canal Oficial</h3>
+        <div class="stat-number" data-target="864">0</div>
+        <p>Suscriptores Activos</p>
+        <a href="https://t.me/+VhsPeOpqFjUwNDM0" target="_blank" class="btn-action">Entrar al Canal</a>
       </div>
 
-      <div class="card">
-        <div>
-          <h3>🔥 GUEBO CALIENTE 🔥</h3>
-          <p>Canal Oficial con el contenido y novedades más recientes.</p>
-          <div class="stats">864+ Suscriptores</div>
-        </div>
-        <a href="https://t.me/+VhsPeOpqFjUwNDM0" target="_blank" class="btn">Suscribirse al Canal</a>
+      <div class="stat-card">
+        <h3>💬 Grupo en Vivo</h3>
+        <div class="stat-number" data-target="177">0</div>
+        <p>Miembros Interactuando</p>
+        <a href="https://t.me/+ZGA2e6fvxEE4YWJk" target="_blank" class="btn-action">Unirse al Chat</a>
       </div>
-    </section>
+    </div>
 
-    <div class="security-info">
-      🛡️ <strong>Espacio Seguro:</strong> Mantenemos políticas claras de respeto y privacidad para garantizar la seguridad de toda nuestra comunidad.
+    <!-- Mosaico Interactivo -->
+    <h2 class="section-title">Explora la Comunidad</h2>
+    <div class="grid-interactive">
+      <div class="interactive-card">
+        <div class="icon">🔒</div>
+        <h4>100% Privado</h4>
+        <p>Espacio discreto para compartir en libertad.</p>
+      </div>
+      <div class="interactive-card">
+        <div class="icon">🔥</div>
+        <h4>Interacción Directa</h4>
+        <p>Conecta con personas afines al instante.</p>
+      </div>
+      <div class="interactive-card">
+        <div class="icon">⚡</div>
+        <h4>Acceso Libre</h4>
+        <p>Sin registros complicados ni pagos.</p>
+      </div>
+    </div>
+
+    <!-- Beneficios -->
+    <h2 class="section-title">¿Qué encontrarás aquí?</h2>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <h4>Diversidad Real</h4>
+        <p>Espacio abierto e incluyente para todas las identidades y expresiones.</p>
+      </div>
+      <div class="benefit-item">
+        <h4>Ambiente Seguro</h4>
+        <p>Moderación activa para garantizar el respeto entre miembros.</p>
+      </div>
+      <div class="benefit-item">
+        <h4>Contenido Diario</h4>
+        <p>Actualizaciones constantes en nuestro canal oficial de Telegram.</p>
+      </div>
     </div>
   </main>
 
-  <footer>
-    <p>&copy; Guebo Caliente Internacional - Todos los derechos reservados.</p>
-  </footer>
+  <!-- Notificación Flotante -->
+  <div class="floating-alert" id="alertBox">
+    <span>🔥</span>
+    <div>
+      <strong>Comunidad Activa</strong><br>
+      <span id="alertText">+5 nuevos miembros se unieron hoy al Grupo</span>
+    </div>
+  </div>
 
+  <!-- Botón Flotante Permanente -->
+  <a href="https://t.me/+ZGA2e6fvxEE4YWJk" target="_blank" class="sticky-chat-btn">
+    🔥 Entrar al Chat Ahora
+  </a>
+
+  <script>
+    // Script 1: Animación de contadores numéricos
+    const counters = document.querySelectorAll('.stat-number');
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const speed = 40; 
+        const inc = Math.ceil(target / speed);
+
+        if (count < target) {
+          counter.innerText = count + inc;
+          setTimeout(updateCount, 30);
+        } else {
+          counter.innerText = target + "+";
+        }
+      };
+      updateCount();
+    });
+
+    // Script 2: Alternar notificaciones flotantes dinámicas
+    const alertMessages = [
+      "+5 nuevos miembros se unieron hoy al Grupo",
+      "Nuevo contenido disponible en el Canal Oficial",
+      "💬 177+ personas están conversando ahora mismo"
+    ];
+    let msgIndex = 0;
+    setInterval(() => {
+      msgIndex = (msgIndex + 1) % alertMessages.length;
+      document.getElementById('alertText').innerText = alertMessages[msgIndex];
+    }, 6000);
+  </script>
 </body>
 </html>
