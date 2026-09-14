@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guebo Caliente Internacional - Comunidad Oficial</title>
+  <title>Guebo Calientes 🇩🇴 | Portal Oficial</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
       --bg-dark: #0a0a0c;
-      --card-bg: rgba(22, 22, 28, 0.75);
+      --card-bg: rgba(22, 22, 28, 0.85);
       --red-accent: #ff1e27;
       --orange-accent: #ff5e00;
       --glow-red: rgba(255, 30, 39, 0.4);
       --text-main: #ffffff;
       --text-sub: #b0b0b8;
+      --x-color: #ffffff;
     }
 
     * {
@@ -22,14 +24,13 @@
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     }
 
-    /* 1. Fondo Dinámico Animado */
     body {
       background: linear-gradient(-45deg, #050507, #120406, #1c0608, #0a0a0c);
       background-size: 400% 400%;
       animation: gradientBG 12s ease infinite;
       color: var(--text-main);
       min-height: 100vh;
-      padding-bottom: 80px;
+      padding-bottom: 90px;
     }
 
     @keyframes gradientBG {
@@ -74,17 +75,64 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .hero-text p {
       color: var(--text-sub);
-      font-size: 1rem;
+      font-size: 0.95rem;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
-    /* 2. Contadores Animados */
+    /* Botones Principales / Redes */
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 1.5rem 0 2.5rem 0;
+    }
+
+    .btn-social {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+      color: #fff;
+    }
+
+    .btn-x {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-x:hover {
+      background: #fff;
+      color: #000;
+      transform: translateY(-2px);
+    }
+
+    .btn-telegram {
+      background: linear-gradient(135deg, #0088cc 0%, #006699 100%);
+      box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
+    }
+
+    .btn-telegram:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 136, 204, 0.5);
+    }
+
+    /* Contadores de Estadísticas */
     .stats-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1.2rem;
       margin-bottom: 2.5rem;
     }
@@ -106,12 +154,18 @@
     }
 
     .stat-number {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       font-weight: 800;
       color: var(--orange-accent);
     }
 
-    /* 3. Mosaico Interactivo */
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      margin-top: 4px;
+    }
+
+    /* Mosaico Interactivo */
     .section-title {
       font-size: 1.4rem;
       margin-bottom: 1.2rem;
@@ -132,14 +186,12 @@
       border-radius: 14px;
       padding: 1.2rem;
       text-align: center;
-      cursor: pointer;
       transition: all 0.3s ease;
     }
 
-    .interactive-card:hover, .interactive-card:active {
+    .interactive-card:hover {
       background: linear-gradient(135deg, rgba(255, 30, 39, 0.2), rgba(255, 94, 0, 0.1));
       border-color: var(--orange-accent);
-      box-shadow: 0 0 15px rgba(255, 94, 0, 0.3);
       transform: scale(1.02);
     }
 
@@ -148,50 +200,7 @@
       margin-bottom: 0.5rem;
     }
 
-    /* 4. Sección de Beneficios */
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-bottom: 3rem;
-    }
-
-    .benefit-item {
-      background: var(--card-bg);
-      border-left: 4px solid var(--red-accent);
-      padding: 1rem 1.2rem;
-      border-radius: 8px;
-    }
-
-    .benefit-item h4 {
-      color: var(--orange-accent);
-      margin-bottom: 0.3rem;
-    }
-
-    .benefit-item p {
-      font-size: 0.88rem;
-      color: var(--text-sub);
-    }
-
-    .btn-action {
-      display: inline-block;
-      width: 100%;
-      padding: 0.9rem;
-      margin-top: 1rem;
-      background: linear-gradient(45deg, var(--red-accent), var(--orange-accent));
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 25px;
-      box-shadow: 0 4px 15px var(--glow-red);
-      transition: opacity 0.2s;
-    }
-
-    .btn-action:hover {
-      opacity: 0.9;
-    }
-
-    /* 5. Notificación Flotante */
+    /* Notificación Flotante */
     .floating-alert {
       position: fixed;
       bottom: 80px;
@@ -206,15 +215,9 @@
       align-items: center;
       gap: 0.6rem;
       z-index: 99;
-      animation: floatIn 0.5s ease-out;
     }
 
-    @keyframes floatIn {
-      from { transform: translateY(50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    /* 6. Botón Flotante Permanente */
+    /* Botón Flotante Permanente */
     .sticky-chat-btn {
       position: fixed;
       bottom: 15px;
@@ -244,7 +247,7 @@
       .sticky-chat-btn {
         left: auto;
         right: 20px;
-        width: 220px;
+        width: 240px;
       }
     }
   </style>
@@ -253,31 +256,44 @@
 
   <header>
     <div class="logo-container">
-      <!-- Cambia 'logo.jpg' por el nombre de tu archivo guardado -->
-      <img src="logo.png" alt="Logo Guebo Caliente Internacional" class="logo-img">
+      <img src="logo.png" alt="Guebo Caliente Logo" class="logo-img">
     </div>
   </header>
 
   <main>
     <div class="hero-text">
-      <h1>Guebo Caliente Internacional</h1>
-      <p>Comunidad 100% segura, discreta y libre de prejuicios (LGBT, LGBTQIA+ y más).</p>
+      <h1>🇩🇴 Guebo Calientes 🔥</h1>
+      <p>La página de los dominicanos. Comunidad 100% segura, videos caseros, discreta y libre de prejuicios.</p>
     </div>
 
-    <!-- Contadores de Miembros -->
+    <!-- Enlaces Directos Oficiales -->
+    <div class="hero-buttons">
+      <a href="https://x.com/guebocalientes" target="_blank" class="btn-social btn-x">
+        <i class="fab fa-x-twitter"></i> @guebocalientes
+      </a>
+      <a href="https://t.me/+MS1RRMfj5YYxM..." target="_blank" class="btn-social btn-telegram">
+        <i class="fab fa-telegram-plane"></i> Telegram Oficial
+      </a>
+    </div>
+
+    <!-- Contadores Dinámicos -->
     <div class="stats-container">
       <div class="stat-card">
-        <h3>🔥 Canal Oficial</h3>
-        <div class="stat-number" data-target="864">0</div>
-        <p>Suscriptores Activos</p>
-        <a href="https://t.me/+VhsPeOpqFjUwNDM0" target="_blank" class="btn-action">Entrar al Canal</a>
+        <i class="fab fa-x-twitter" style="font-size: 1.5rem; color: #fff;"></i>
+        <div class="stat-number" data-target="20480">0</div>
+        <div class="stat-label">Seguidores en X</div>
       </div>
 
       <div class="stat-card">
-        <h3>💬 Grupo en Vivo</h3>
+        <i class="fab fa-telegram-plane" style="font-size: 1.5rem; color: #0088cc;"></i>
+        <div class="stat-number" data-target="864">0</div>
+        <div class="stat-label">Suscriptores Telegram</div>
+      </div>
+
+      <div class="stat-card">
+        <i class="fas fa-users" style="font-size: 1.5rem; color: var(--orange-accent);"></i>
         <div class="stat-number" data-target="177">0</div>
-        <p>Miembros Interactuando</p>
-        <a href="https://t.me/+ZGA2e6fvxEE4YWJk" target="_blank" class="btn-action">Unirse al Chat</a>
+        <div class="stat-label">Miembros en el Grupo</div>
       </div>
     </div>
 
@@ -285,56 +301,39 @@
     <h2 class="section-title">Explora la Comunidad</h2>
     <div class="grid-interactive">
       <div class="interactive-card">
+        <div class="icon">🇩🇴</div>
+        <h4>Contenido Dominicano</h4>
+        <p>Videos caseros e interacción real directa.</p>
+      </div>
+      <div class="interactive-card">
         <div class="icon">🔒</div>
         <h4>100% Privado</h4>
         <p>Espacio discreto para compartir en libertad.</p>
       </div>
       <div class="interactive-card">
-        <div class="icon">🔥</div>
-        <h4>Interacción Directa</h4>
-        <p>Conecta con personas afines al instante.</p>
-      </div>
-      <div class="interactive-card">
         <div class="icon">⚡</div>
-        <h4>Acceso Libre</h4>
-        <p>Sin registros complicados ni pagos.</p>
-      </div>
-    </div>
-
-    <!-- Beneficios -->
-    <h2 class="section-title">¿Qué encontrarás aquí?</h2>
-    <div class="benefits-grid">
-      <div class="benefit-item">
-        <h4>Diversidad Real</h4>
-        <p>Espacio abierto e incluyente para todas las identidades y expresiones.</p>
-      </div>
-      <div class="benefit-item">
-        <h4>Ambiente Seguro</h4>
-        <p>Moderación activa para garantizar el respeto entre miembros.</p>
-      </div>
-      <div class="benefit-item">
-        <h4>Contenido Diario</h4>
-        <p>Actualizaciones constantes en nuestro canal oficial de Telegram.</p>
+        <h4>Acceso Directo</h4>
+        <p>Entra a nuestras redes verificadas de inmediato.</p>
       </div>
     </div>
   </main>
 
   <!-- Notificación Flotante -->
-  <div class="floating-alert" id="alertBox">
+  <div class="floating-alert">
     <span>🔥</span>
     <div>
       <strong>Comunidad Activa</strong><br>
-      <span id="alertText">+5 nuevos miembros se unieron hoy al Grupo</span>
+      <span id="alertText">Síguenos en X: @guebocalientes</span>
     </div>
   </div>
 
-  <!-- Botón Flotante Permanente -->
-  <a href="https://t.me/+ZGA2e6fvxEE4YWJk" target="_blank" class="sticky-chat-btn">
-    🔥 Entrar al Chat Ahora
+  <!-- Botón Flotante de Telegram -->
+  <a href="https://t.me/+MS1RRMfj5YYxM..." target="_blank" class="sticky-chat-btn">
+    🔥 Entrar al Telegram
   </a>
 
   <script>
-    // Script 1: Animación de contadores numéricos
+    // Contador animado para las métricas reales
     const counters = document.querySelectorAll('.stat-number');
     counters.forEach(counter => {
       const updateCount = () => {
@@ -347,23 +346,23 @@
           counter.innerText = count + inc;
           setTimeout(updateCount, 30);
         } else {
-          counter.innerText = target + "+";
+          counter.innerText = target.toLocaleString() + "+";
         }
       };
       updateCount();
     });
 
-    // Script 2: Alternar notificaciones flotantes dinámicas
+    // Notificaciones periódicas
     const alertMessages = [
-      "+5 nuevos miembros se unieron hoy al Grupo",
-      "Nuevo contenido disponible en el Canal Oficial",
-      "💬 177+ personas están conversando ahora mismo"
+      "Síguenos en X: @guebocalientes",
+      "🔥 Videos caseros y contenido exclusivo en Telegram",
+      "🇩🇴 La comunidad más activa de República Dominicana"
     ];
     let msgIndex = 0;
     setInterval(() => {
       msgIndex = (msgIndex + 1) % alertMessages.length;
       document.getElementById('alertText').innerText = alertMessages[msgIndex];
-    }, 6000);
+    }, 5000);
   </script>
 </body>
 </html>
