@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guebo Calientes 🇩🇴 | Portal Oficial</title>
+  <title>Guebo Calientes  | Portal Oficial</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
@@ -262,19 +262,19 @@
 
   <main>
     <div class="hero-text">
-      <h1>🇩🇴 Guebo Calientes 🔥</h1>
+      <h1>Guebo Calientes </h1>
       <p>La página de los dominicanos. Comunidad 100% segura, videos caseros, discreta y libre de prejuicios.</p>
     </div>
 
     <!-- Enlaces Directos Oficiales -->
-    <div class="hero-buttons">
-      <a href="https://x.com/guebocalientes" target="_blank" class="btn-social btn-x">
-        <i class="fab fa-x-twitter"></i> @guebocalientes
-      </a>
-      <a href="https://t.me/+MS1RRMfj5YYxM..." target="_blank" class="btn-social btn-telegram">
-        <i class="fab fa-telegram-plane"></i> Telegram Oficial
-      </a>
-    </div>
+<div class="hero-buttons">
+  <a href="https://x.com/guebocalientes" target="_blank" class="btn-social btn-x">
+    <i class="fa-brands fa-x-twitter"></i> @guebocalientes
+  </a>
+  <a href="https://t.me/+MS1RRMfj5YYxM..." target="_blank" class="btn-social btn-telegram">
+    <i class="fa-brands fa-telegram"></i> Telegram Oficial
+  </a>
+</div>
 
     <!-- Contadores Dinámicos -->
     <div class="stats-container">
@@ -299,12 +299,13 @@
 
     <!-- Mosaico Interactivo -->
     <h2 class="section-title">Explora la Comunidad</h2>
-    <div class="grid-interactive">
-      <div class="interactive-card">
-        <div class="icon">🇩🇴</div>
-        <h4>Contenido Dominicano</h4>
-        <p>Videos caseros e interacción real directa.</p>
-      </div>
+    <div class="interactive-card">
+  <div class="icon">
+    <img src="https://flagcdn.com/w40/do.png" alt="Bandera Dominicana" style="width: 38px; height: auto; border-radius: 4px; vertical-align: middle;">
+  </div>
+  <h4>Contenido Dominicano</h4>
+  <p>Videos caseros e interacción real directa.</p>
+</div>
       <div class="interactive-card">
         <div class="icon">🔒</div>
         <h4>100% Privado</h4>
@@ -328,9 +329,9 @@
   </div>
 
   <!-- Botón Flotante de Telegram -->
-  <a href="https://t.me/+MS1RRMfj5YYxM..." target="_blank" class="sticky-chat-btn">
-    🔥 Entrar al Telegram
-  </a>
+<a href="https://t.me/+MS1RRMfj5YYxM..." target="_blank" class="sticky-chat-btn">
+  <i class="fa-brands fa-telegram"></i> Entrar al Telegram
+</a>
 
   <script>
     // Contador animado para las métricas reales
@@ -352,17 +353,17 @@
       updateCount();
     });
 
-    // Notificaciones periódicas
-    const alertMessages = [
-      "Síguenos en X: @guebocalientes",
-      "🔥 Videos caseros y contenido exclusivo en Telegram",
-      "🇩🇴 La comunidad más activa de República Dominicana"
-    ];
-    let msgIndex = 0;
-    setInterval(() => {
-      msgIndex = (msgIndex + 1) % alertMessages.length;
-      document.getElementById('alertText').innerText = alertMessages[msgIndex];
-    }, 5000);
-  </script>
-</body>
-</html>
+    // Notificaciones periódicas con soporte para HTML / Iconos
+const alertMessages = [
+  'Síguenos en <i class="fa-brands fa-x-twitter"></i> <strong>@guebocalientes</strong>',
+  '<span style="background:#ff1e27; color:#fff; padding:2px 6px; border-radius:4px; font-weight:bold; font-size:0.75rem;">+18</span> Videos caseros y contenido exclusivo en Telegram',
+  '<img src="https://flagcdn.com/w20/do.png" alt="DO" style="vertical-align:middle; border-radius:2px;"> La comunidad más activa de República Dominicana'
+];
+
+let msgIndex = 0;
+
+setInterval(() => {
+  msgIndex = (msgIndex + 1) % alertMessages.length;
+  // Cambiamos .innerText por .innerHTML para procesar las etiquetas de los iconos e imágenes
+  document.getElementById('alertText').innerHTML = alertMessages[msgIndex];
+}, 5000);
