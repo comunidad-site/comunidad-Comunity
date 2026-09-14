@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guebo Caliente Internacional - Comunidad Oficial</title>
+  <style>
+    :root {
+      --bg-color: #0f0f11;
+      --card-bg: #1a1a1e;
+      --primary-red: #e50914;
+      --accent-orange: #ff5722;
+      --text-main: #ffffff;
+      --text-muted: #b3b3b3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #000;
+      padding: 1rem 2rem;
+      text-align: center;
+      border-bottom: 2px solid var(--primary-red);
+    }
+
+    .logo-img {
+      max-width: 180px;
+      height: auto;
+      border-radius: 50%;
+      border: 3px solid var(--primary-red);
+      box-shadow: 0 0 15px rgba(229, 9, 20, 0.5);
+    }
+
+    main {
+      flex: 1;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-top: 1rem;
+      color: var(--primary-red);
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .about-box {
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      text-align: left;
+      border-left: 4px solid var(--accent-orange);
+    }
+
+    .community-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 1.5rem;
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-red);
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .card .stats {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--accent-orange);
+      margin: 0.5rem 0 1.5rem 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(45deg, var(--primary-red), var(--accent-orange));
+      color: #fff;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .security-info {
+      background-color: rgba(229, 9, 20, 0.1);
+      border: 1px solid var(--primary-red);
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Sustituye 'logo.jpg' por el nombre exacto de la imagen subida a tu repositorio -->
+    <img src="logo.jpg" alt="Guebo Caliente Internacional Logo" class="logo-img">
+  </header>
+
+  <main>
+    <h1>Guebo Caliente Internacional</h1>
+    <p class="subtitle">Comunidad 100% segura, accesible y diversa</p>
+
+    <section class="about-box">
+      <h2>Sobre Nosotros</h2>
+      <p>
+        Un espacio abierto diseñado para todas las comunidades: LGBT, LGBTQ, LGBTI, LGBTQIA+ y LGBTTTIQ+. 
+        Nuestro objetivo es ofrecer un entorno cómodo, fácil de acceder y utilizar, donde puedas conectar 
+        y compartir tus experiencias en total libertad.
+      </p>
+    </section>
+
+    <section class="community-cards">
+      <div class="card">
+        <div>
+          <h3>🔥 GRUPO 🔥</h3>
+          <p>Comparte e interactúa directamente con los miembros.</p>
+          <div class="stats">177+ Miembros</div>
+        </div>
+        <a href="https://t.me/+ZGA2e6fvxEE4YWJk" target="_blank" class="btn">Unirse al Grupo</a>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>🔥 GUEBO CALIENTE 🔥</h3>
+          <p>Canal Oficial con el contenido y novedades más recientes.</p>
+          <div class="stats">864+ Suscriptores</div>
+        </div>
+        <a href="https://t.me/+VhsPeOpqFjUwNDM0" target="_blank" class="btn">Suscribirse al Canal</a>
+      </div>
+    </section>
+
+    <div class="security-info">
+      🛡️ <strong>Espacio Seguro:</strong> Mantenemos políticas claras de respeto y privacidad para garantizar la seguridad de toda nuestra comunidad.
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; Guebo Caliente Internacional - Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
