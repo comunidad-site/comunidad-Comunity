@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guebo Calientes 🇩🇴 | Portal Oficial</title>
-  <!-- Font Awesome 6.5.1 Actualizado -->
+  <!-- Font Awesome 6.5.1 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Flag Icons SVG (Librería para banderas de TODOS los países) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.0.0/css/flag-icons.min.css">
+  
   <style>
     :root {
       --bg-dark: #0a0a0c;
@@ -87,7 +90,7 @@
       margin: 0 auto;
     }
 
-    /* Botones Principales / Redes */
+    /* Botones Principales */
     .hero-buttons {
       display: flex;
       justify-content: center;
@@ -130,7 +133,7 @@
       box-shadow: 0 6px 18px rgba(0, 136, 204, 0.5);
     }
 
-    /* Contadores de Estadísticas */
+    /* Contadores */
     .stats-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -201,6 +204,12 @@
       margin-bottom: 0.5rem;
     }
 
+    /* Ajuste para iconos de banderas de la librería */
+    .fi {
+      border-radius: 3px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    }
+
     /* Notificación Flotante */
     .floating-alert {
       position: fixed;
@@ -263,16 +272,16 @@
 
   <main>
     <div class="hero-text">
-      <h1>Guebo Calientes 🇩🇴</h1>
-      <p>La página de los dominicanos. Comunidad 100% segura, videos caseros, discreta y libre de prejuicios.</p>
+      <h1>Guebo Calientes <span class="fi fi-do"></span></h1>
+      <p>La página de los dominicanos e internacional. Comunidad 100% segura, videos caseros, discreta y libre de prejuicios.</p>
     </div>
 
     <!-- Enlaces Directos Oficiales -->
     <div class="hero-buttons">
       <a href="https://x.com/guebocalientes" target="_blank" class="btn-social btn-x">
-        <i class="fa-brands fa-x-twitter"></i> @guebocalientes
+        <i class="fa-brands fa-x-twitter"></i> guebocalientes
       </a>
-      <a href="https://t.me/+MS1RRMfj5YYxM..." target="_blank" class="btn-social btn-telegram">
+      <a href="https://t.me/guebocalienteweb" target="_blank" class="btn-social btn-telegram">
         <i class="fa-brands fa-telegram"></i> Telegram Oficial
       </a>
     </div>
@@ -298,32 +307,30 @@
       </div>
     </div>
 
-    <!-- Mosaico Interactivo -->
+    <!-- Mosaico Interactivo con Iconos de Países -->
     <h2 class="section-title">Explora la Comunidad</h2>
     <div class="grid-interactive">
       <div class="interactive-card">
-        <div class="icon">
-          <img src="https://flagcdn.com/w40/do.png" alt="Bandera Dominicana" style="width: 38px; height: auto; border-radius: 4px; vertical-align: middle;">
-        </div>
-        <h4>Contenido Dominicano</h4>
+        <div class="icon"><span class="fi fi-do"></span></div>
+        <h4>Rep. Dominicana</h4>
         <p>Videos caseros e interacción real directa.</p>
       </div>
 
       <div class="interactive-card">
-        <div class="icon">🔒</div>
-        <h4>100% Privado</h4>
-        <p>Espacio discreto para compartir en libertad.</p>
+        <div class="icon"><span class="fi fi-us"></span> <span class="fi fi-pr"></span></div>
+        <h4>Diáspora / EE.UU.</h4>
+        <p>Conexión directa con la comunidad exterior.</p>
       </div>
 
       <div class="interactive-card">
-        <div class="icon">⚡</div>
-        <h4>Acceso Directo</h4>
-        <p>Entra a nuestras redes verificadas de inmediato.</p>
+        <div class="icon"><span class="fi fi-es"></span> <span class="fi fi-mx"></span> <span class="fi fi-co"></span></div>
+        <h4>Internacional</h4>
+        <p>Espacio abierto para miembros de todos los países.</p>
       </div>
     </div>
   </main>
 
-  <!-- Notificación Flotante -->
+  <!-- Notificación Flotante Dinámica -->
   <div class="floating-alert">
     <span>🔥</span>
     <div>
@@ -338,7 +345,7 @@
   </a>
 
   <script>
-    // Contador animado para las métricas reales
+    // Contador animado
     const counters = document.querySelectorAll('.stat-number');
     counters.forEach(counter => {
       const updateCount = () => {
@@ -357,11 +364,11 @@
       updateCount();
     });
 
-    // Notificaciones periódicas con soporte para HTML / Iconos
+    // Notificaciones periódicas con banderas de múltiples países
     const alertMessages = [
       'Síguenos en <i class="fa-brands fa-x-twitter"></i> <strong>@guebocalientes</strong>',
-      '<span style="background:#ff1e27; color:#fff; padding:2px 6px; border-radius:4px; font-weight:bold; font-size:0.75rem;">+18</span> Videos caseros y contenido exclusivo en Telegram',
-      '<img src="https://flagcdn.com/w20/do.png" alt="DO" style="vertical-align:middle; border-radius:2px;"> La comunidad más activa de República Dominicana'
+      '<span style="background:#ff1e27; color:#fff; padding:2px 6px; border-radius:4px; font-weight:bold; font-size:0.75rem;">+18</span> Contenido exclusivo en Telegram',
+      '<span class="fi fi-do"></span> <span class="fi fi-us"></span> <span class="fi fi-es"></span> Comunidad activa en todo el mundo'
     ];
 
     let msgIndex = 0;
